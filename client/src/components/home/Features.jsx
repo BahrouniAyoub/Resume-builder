@@ -12,7 +12,7 @@ const Features = () => {
                 <span>Simple Process</span>
             </div>
 
-            <Title title="Buil your resume" description="Our stramlined process helps you create a professional resume in minutes with intelligent AI-powered tools and features." />
+            <Title title="Build your resume" description="Our stramlined process helps you create a professional resume in minutes with intelligent AI-powered tools and features." />
 
 
             <div className="flex flex-col md:flex-row items-center justify-center xl:-mt-10">
