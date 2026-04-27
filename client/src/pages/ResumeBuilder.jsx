@@ -2,6 +2,7 @@ import { ArrowLeftIcon, Briefcase, ChevronLeft, ChevronRight, FileText, FolderIc
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { dummyResumeData } from '../assets/assets.js'
+import PersonalInfoFrom from '../components/PersonalInfoFrom.jsx'
 
 const ResumeBuilder = () => {
 
@@ -9,7 +10,7 @@ const ResumeBuilder = () => {
   const [resumeData, setResumeData] = React.useState({
     _id: "",
     title: "",
-    personal_Info: {},
+    personal_info: {},
     experience: [],
     skills: [],
     templates: "classic",
@@ -90,6 +91,18 @@ const ResumeBuilder = () => {
                     Next <ChevronRight className="size-4" />
                   </button>
                 </div>
+              </div>
+
+              {/* Form Contetn */}
+              <div className="space-y-6">
+                {activeSection.id === "personal" && (
+                  <PersonalInfoFrom 
+                    data={resumeData.personal_info} 
+                    onChange={(data) => setResumeData(prev => ({ ...prev, personal_info: data }))} 
+                    removeBackground={removeBackgorund}
+                    setRemoveBackground={setRemoveBackgorund}
+                  />
+                )}
               </div>
 
             </div>
